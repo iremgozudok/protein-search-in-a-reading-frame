@@ -1,11 +1,6 @@
 from structures import *
 from DNAToolkit import *
-import random
 
-randDNASeq = ''.join([random.choice(Nucleotides)
-                      for nuc in range(50)])
-
-DNAStr = validateSeq(randDNASeq)
-
-print(f"\nSequence: {DNAStr}\n")
-print(f"Sequence Lenght: {len(DNAStr)}\n")
+print(f"All prots in 6 open reading frames:")
+for prot in all_proteins_from_orfs(NM_001313993_2, 0, 0, True):
+    print(f"{prot}")
